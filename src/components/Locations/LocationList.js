@@ -8,8 +8,7 @@ class LocationList extends Component {
         {
           this.props.locations.map(location =>
             <div key={location.id}>
-            <p>{location.name}</p>
-            <p>{location.address}</p>
+            <p>{location.name}: {location.address}</p>
             </div>
           )}
       </section>

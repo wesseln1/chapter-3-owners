@@ -8,8 +8,10 @@ class AnimalList extends Component {
       {
         this.props.animals.map(animal =>
           <div key={animal.id}>
-            <p>{animal.name}</p>
-            <p>{animal.type}</p>
+            <p>{animal.name}
+            <br></br>
+             Breed: {animal.type}
+            </p>
           </div>)
       }
       </secton>

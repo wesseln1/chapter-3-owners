@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import AnimalList from './Animals/AnimalList'
 import LocationList from './Locations/LocationList'
 import EmployeeList from './Employees/EmployeeList'
+import OwnerList from "./Owners/OwnerList"
 
 class ApplicationViews extends Component {
   employeesFromAPI = [
@@ -24,13 +25,20 @@ class ApplicationViews extends Component {
     { id: 4, name: "Lona", type: "Cat"}
   ]
 
+  ownersFromAPI = [
+    { id: 1, name: "Wendy & Peter Wessel", number: "(989)464-0969"},
+    { id: 2, name: "Nick Wessel", number: "(989)464-5890"},
+    { id: 3, name: "Taylor Wessel & Luke Wilson", number: "(989)464-1371"}
+  ]
+
   state = {
     employees: this.employeesFromAPI,
     locations: this.locationsFromAPI,
-    animals: this.animalsFromAPI
+    animals: this.animalsFromAPI,
+    owners: this.ownersFromAPI
   }
 
-  redner() {
+  render() {
     return (
       <React.Fragment>
         <Route exact path="/" render={(props)=> {
@@ -41,6 +49,9 @@ class ApplicationViews extends Component {
         }}/>
         <Route path="/employees" render={(props) => {
           return <EmployeeList employees={this.state.employees}/>
+        }}/>
+        <Route path="/owners" render={(props) => {
+          return <OwnerList owners={this.state.owners}/>
         }}/>
       </React.Fragment>
     )

@@ -1,5 +1,6 @@
 .kennel {
   display: flex;
+  padding-right: 10px;
   margin-right: 20px;
   justify-content: space-around;
   flex-direction: row;
